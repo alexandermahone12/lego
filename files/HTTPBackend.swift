@@ -4,19 +4,22 @@ import Foundation
 
 enum ServerConfig {
 
-    /// The simulator shares your Mac's network, so localhost is your Mac.
+    /// The deployed server. HTTPS, always on, and what a TestFlight or App Store build
+    /// has to talk to — nobody else can reach your Mac.
     ///
-    /// On a real device localhost is the *phone*, and there is no server there. Set the
-    /// override below to your Mac's address on the same Wi-Fi (System Settings →
-    /// Network), e.g. "http://192.168.1.42:8080", and add the ATS exception described
-    /// in server/README.md — iOS blocks plain HTTP to anything but loopback.
-    private static let defaultURL = "http://localhost:8080"
+    /// To develop against your own machine instead, set the override below rather than
+    /// editing this line, so a local address can never be shipped by accident.
+    private static let defaultURL = "https://lego-production-5167.up.railway.app"
 
-    /// Overridable without touching code, which matters when you're testing on a device
-    /// and your router hands out a different address every few days:
+    /// Overridable without touching code:
     ///
     ///   Xcode → Edit Scheme → Run → Arguments → Environment Variables
-    ///   BRICKSOUQ_SERVER_URL = http://192.168.1.42:8080
+    ///   BRICKSOUQ_SERVER_URL = http://localhost:8080
+    ///
+    /// Use that for day-to-day work against `npm start` on your Mac. On a real device
+    /// localhost is the *phone*, so use your Mac's Wi-Fi address there instead
+    /// ("http://192.168.18.123:8080") plus the ATS exception in server/README.md —
+    /// iOS blocks plain HTTP to anything but loopback.
     static var baseURL: URL {
         let string = ProcessInfo.processInfo.environment["BRICKSOUQ_SERVER_URL"]
             ?? UserDefaults.standard.string(forKey: "BrickSouqServerURL")
@@ -373,9 +376,25 @@ actor HTTPBackend: Backend {
             "completedTrades": 24
         ])
 
-        guard let (data, response) = try? await session.data(for: request),
-              (response as? HTTPURLResponse)?.statusCode == 200,
-              let devSession = try? Self.decoder.decode(Session.self, from: data) else {
+        guard let (data, response) = try? await session.data(for: request) else {
+            throw BackendError.network
+        }
+
+        let status = (response as? HTTPURLResponse)?.statusCode ?? 0
+
+        // A production server refuses development sign-in on purpose, so this is not a
+        // fault — it means the app is pointed at a real server while still skipping the
+        // Apple flow. Reporting "check your connection" here sends you hunting through
+        // the server for a problem that is in RootView.
+        if status == 404 {
+            throw BackendError.rejected(
+                "This server has development sign-in disabled, which is correct for a "
+                + "deployed one. Set skipSignIn to false in RootView to use Sign in "
+                + "with Apple, or point BRICKSOUQ_SERVER_URL at your local server."
+            )
+        }
+
+        guard status == 200, let devSession = try? Self.decoder.decode(Session.self, from: data) else {
             throw BackendError.network
         }
         store(devSession)

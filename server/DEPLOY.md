@@ -110,13 +110,21 @@ Skip this for a real launch — you do not want fake listings in front of real u
 
 ## Step 4 — Point the app at it
 
-One line, in `files/HTTPBackend.swift`:
+Already done — `ServerConfig.defaultURL` in `files/HTTPBackend.swift` points at the
+deployed server, which is what a TestFlight or App Store build must talk to.
 
-```swift
-private static let defaultURL = "https://YOUR-APP.up.railway.app"
+For day-to-day work against your Mac, override it per-scheme rather than editing that
+line, so a local address can never ship by accident:
+
+```
+Xcode → Edit Scheme → Run → Arguments → Environment Variables
+BRICKSOUQ_SERVER_URL = http://localhost:8080
 ```
 
-Then in Xcode: **Product → Clean Build Folder**, run, and confirm listings load.
+**Testing against the deployed server needs real Sign in with Apple.** `/v1/auth/dev`
+is disabled whenever `NODE_ENV=production`, which is the point of it — so set
+`skipSignIn = false` in `RootView` before pointing a build at Railway. Browsing works
+either way; publishing is what needs a session.
 
 Two things follow from being on HTTPS now:
 
@@ -145,7 +153,26 @@ backup; it is a second copy of the thing that will fail.
 
 ---
 
-## Step 6 — Before real users, not before testing
+## Step 6 — Prove the volume actually works
+
+Do this before you trust it with anything. A missing volume fails **silently** — the
+app works perfectly right up until a redeploy, and then the data is gone.
+
+1. Post a listing with a photo from the app.
+2. In Railway, hit **Redeploy**.
+3. Open the app again. The listing should still be there.
+
+If it vanished, `DATABASE_PATH` and the volume's mount path disagree. The deploy log
+prints where the server actually put things:
+
+```
+  database    /data/bricksouq.db
+  photos      /data/uploads
+```
+
+Anything other than `/data/...` there means the volume is not being used.
+
+## Step 7 — Before real users, not before testing
 
 - **Apple token revocation.** Add `APPLE_TEAM_ID`, `APPLE_KEY_ID` and the `.p8` key
   contents so account deletion revokes with Apple. Reviewers check this. On a host,
