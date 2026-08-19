@@ -96,7 +96,7 @@ actor HTTPBackend: Backend {
         if let email { payload["email"] = email }
 
         let session: Session = try await send("POST", "/v1/auth/apple",
-                                              body: payload, authenticated: false)
+                                              body: payload, auth: .none)
         store(session)
 
         // Apple's revoke endpoint needs this code, and it is valid exactly once, right
@@ -145,7 +145,8 @@ actor HTTPBackend: Backend {
         if let condition { items.append(URLQueryItem(name: "condition", value: condition.rawValue)) }
         if let query, !query.isEmpty { items.append(URLQueryItem(name: "query", value: query)) }
 
-        let response: Response = try await send("GET", "/v1/listings", query: items)
+        // Public. A token only personalises the result by hiding sellers you blocked.
+        let response: Response = try await send("GET", "/v1/listings", query: items, auth: .optional)
         return response.listings
     }
 
@@ -196,6 +197,20 @@ actor HTTPBackend: Backend {
 
     // MARK: - Request plumbing
 
+    /// How a request relates to having a session.
+    ///
+    /// This used to be a `Bool`, which quietly meant two things at once: attach a token,
+    /// *and* go get one first if we haven't. Browsing only ever wanted the first —
+    /// listings are public, and a token just personalises them by hiding blocked
+    /// sellers. Demanding a session to read a public feed meant that on a server with
+    /// development sign-in disabled, which is every deployed server, the app could not
+    /// show its own front page.
+    private enum Authentication {
+        case none        // never attach a token — the endpoints that hand them out
+        case optional    // attach one if we have it; never sign in just to read
+        case required    // there must be a session
+    }
+
     private func escape(_ value: String) -> String {
         value.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? value
     }
@@ -211,10 +226,10 @@ actor HTTPBackend: Backend {
     private func send<Response: Decodable>(
         _ method: String, _ path: String,
         query: [URLQueryItem] = [], body: Any? = nil,
-        contentType: String = "application/json", authenticated: Bool = true
+        contentType: String = "application/json", auth: Authentication = .required
     ) async throws -> Response {
         let data = try await perform(method, path, query: query, body: body,
-                                     contentType: contentType, authenticated: authenticated)
+                                     contentType: contentType, auth: auth)
         guard !data.isEmpty else { throw BackendError.rejected("The server sent an empty reply.") }
         do {
             return try Self.decoder.decode(Response.self, from: data)
@@ -225,19 +240,19 @@ actor HTTPBackend: Backend {
 
     private func sendVoid(
         _ method: String, _ path: String,
-        query: [URLQueryItem] = [], body: Any? = nil, authenticated: Bool = true
+        query: [URLQueryItem] = [], body: Any? = nil, auth: Authentication = .required
     ) async throws {
         _ = try await perform(method, path, query: query, body: body,
-                              contentType: "application/json", authenticated: authenticated)
+                              contentType: "application/json", auth: auth)
     }
 
     private func perform(
         _ method: String, _ path: String,
         query: [URLQueryItem], body: Any?, contentType: String,
-        authenticated: Bool, isRetry: Bool = false
+        auth: Authentication, isRetry: Bool = false
     ) async throws -> Data {
 
-        if authenticated { try await ensureSignedIn() }
+        if auth == .required { try await ensureSignedIn() }
 
         var components = URLComponents(url: baseURL.appendingPathComponent(path),
                                        resolvingAgainstBaseURL: false)
@@ -247,7 +262,7 @@ actor HTTPBackend: Backend {
         var request = URLRequest(url: url)
         request.httpMethod = method
 
-        if authenticated, let token = accessToken {
+        if auth != .none, let token = accessToken {
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
 
@@ -274,16 +289,24 @@ actor HTTPBackend: Backend {
         case 200...299:
             return data
 
-        case 401 where authenticated && !isRetry:
+        case 401 where auth != .none && !isRetry:
             // Try once to get a working session, then retry exactly once — a second
             // 401 means it is genuinely dead, and retrying forever would just spin.
-            guard await recoverSession() else {
-                clearTokens()
-                throw BackendError.rejected("Your session expired. Sign in again.")
+            if await recoverSession() {
+                return try await perform(method, path, query: query, body: body,
+                                         contentType: contentType, auth: auth, isRetry: true)
             }
-            return try await perform(method, path, query: query, body: body,
-                                     contentType: contentType,
-                                     authenticated: authenticated, isRetry: true)
+
+            clearTokens()
+
+            // Reading does not need a session. Drop the dead token and ask again as a
+            // stranger rather than showing an error for something anyone can see.
+            if auth == .optional {
+                return try await perform(method, path, query: query, body: body,
+                                         contentType: contentType, auth: auth, isRetry: true)
+            }
+
+            throw BackendError.rejected("Your session expired. Sign in again.")
 
         case 401:
             clearTokens()
