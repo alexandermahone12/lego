@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA4FDF943034F69C00D7F1BE /* BackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDF8A3034F69C00D7F1BE /* BackendClient.swift */; };
+		BA4FDFA13034F69C00D7F1BE /* HTTPBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDFA03034F69C00D7F1BE /* HTTPBackend.swift */; };
+		BA4FDFA33034F69C00D7F1BE /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDFA23034F69C00D7F1BE /* Photos.swift */; };
+		BA4FDF953034F69C00D7F1BE /* BrickSouqApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDF8B3034F69C00D7F1BE /* BrickSouqApp.swift */; };
+		BA4FDF963034F69C00D7F1BE /* Moderation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDF8F3034F69C00D7F1BE /* Moderation.swift */; };
+		BA4FDF973034F69C00D7F1BE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDF8E3034F69C00D7F1BE /* Models.swift */; };
+		BA4FDF983034F69C00D7F1BE /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDF8C3034F69C00D7F1BE /* Catalog.swift */; };
+		BA4FDF993034F69C00D7F1BE /* MainViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDF8D3034F69C00D7F1BE /* MainViews.swift */; };
+		BA4FDF9A3034F69C00D7F1BE /* SellAndProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDF913034F69C00D7F1BE /* SellAndProfile.swift */; };
+		BA4FDF9B3034F69C00D7F1BE /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDF893034F69C00D7F1BE /* AuthManager.swift */; };
+		BA4FDF9C3034F69C00D7F1BE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FDF923034F69C00D7F1BE /* Theme.swift */; };
+		BA4FDF9D3034F69C00D7F1BE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BA4FDF903034F69C00D7F1BE /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA4FDF593034F61500D7F1BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA4FDF433034F61400D7F1BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA4FDF4A3034F61400D7F1BE;
+			remoteInfo = lego;
+		};
+		BA4FDF633034F61500D7F1BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA4FDF433034F61400D7F1BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA4FDF4A3034F61400D7F1BE;
+			remoteInfo = lego;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BA4FDF4B3034F61400D7F1BE /* lego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lego.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA4FDF583034F61500D7F1BE /* legoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = legoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA4FDF623034F61500D7F1BE /* legoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = legoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA4FDF893034F69C00D7F1BE /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		BA4FDF8A3034F69C00D7F1BE /* BackendClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendClient.swift; sourceTree = "<group>"; };
+		BA4FDF8B3034F69C00D7F1BE /* BrickSouqApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickSouqApp.swift; sourceTree = "<group>"; };
+		BA4FDF8C3034F69C00D7F1BE /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		BA4FDFA03034F69C00D7F1BE /* HTTPBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPBackend.swift; sourceTree = "<group>"; };
+		BA4FDFA23034F69C00D7F1BE /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		BA4FDF8D3034F69C00D7F1BE /* MainViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViews.swift; sourceTree = "<group>"; };
+		BA4FDF8E3034F69C00D7F1BE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		BA4FDF8F3034F69C00D7F1BE /* Moderation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moderation.swift; sourceTree = "<group>"; };
+		BA4FDF903034F69C00D7F1BE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BA4FDF913034F69C00D7F1BE /* SellAndProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellAndProfile.swift; sourceTree = "<group>"; };
+		BA4FDF923034F69C00D7F1BE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BA4FDF4D3034F61400D7F1BE /* lego */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = lego;
+			sourceTree = "<group>";
+		};
+		BA4FDF5B3034F61500D7F1BE /* legoTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = legoTests;
+			sourceTree = "<group>";
+		};
+		BA4FDF653034F61500D7F1BE /* legoUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = legoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA4FDF483034F61400D7F1BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA4FDF553034F61500D7F1BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA4FDF5F3034F61500D7F1BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA4FDF423034F61400D7F1BE = {
+			isa = PBXGroup;
+			children = (
+				BA4FDF933034F69C00D7F1BE /* files */,
+				BA4FDF4D3034F61400D7F1BE /* lego */,
+				BA4FDF5B3034F61500D7F1BE /* legoTests */,
+				BA4FDF653034F61500D7F1BE /* legoUITests */,
+				BA4FDF4C3034F61400D7F1BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA4FDF4C3034F61400D7F1BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA4FDF4B3034F61400D7F1BE /* lego.app */,
+				BA4FDF583034F61500D7F1BE /* legoTests.xctest */,
+				BA4FDF623034F61500D7F1BE /* legoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA4FDF933034F69C00D7F1BE /* files */ = {
+			isa = PBXGroup;
+			children = (
+				BA4FDF893034F69C00D7F1BE /* AuthManager.swift */,
+				BA4FDF8A3034F69C00D7F1BE /* BackendClient.swift */,
+				BA4FDF8B3034F69C00D7F1BE /* BrickSouqApp.swift */,
+				BA4FDF8C3034F69C00D7F1BE /* Catalog.swift */,
+				BA4FDFA03034F69C00D7F1BE /* HTTPBackend.swift */,
+				BA4FDF8D3034F69C00D7F1BE /* MainViews.swift */,
+				BA4FDF8E3034F69C00D7F1BE /* Models.swift */,
+				BA4FDF8F3034F69C00D7F1BE /* Moderation.swift */,
+				BA4FDFA23034F69C00D7F1BE /* Photos.swift */,
+				BA4FDF903034F69C00D7F1BE /* README.md */,
+				BA4FDF913034F69C00D7F1BE /* SellAndProfile.swift */,
+				BA4FDF923034F69C00D7F1BE /* Theme.swift */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA4FDF4A3034F61400D7F1BE /* lego */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA4FDF6C3034F61500D7F1BE /* Build configuration list for PBXNativeTarget "lego" */;
+			buildPhases = (
+				BA4FDF473034F61400D7F1BE /* Sources */,
+				BA4FDF483034F61400D7F1BE /* Frameworks */,
+				BA4FDF493034F61400D7F1BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BA4FDF4D3034F61400D7F1BE /* lego */,
+			);
+			name = lego;
+			packageProductDependencies = (
+			);
+			productName = lego;
+			productReference = BA4FDF4B3034F61400D7F1BE /* lego.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA4FDF573034F61500D7F1BE /* legoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA4FDF6F3034F61500D7F1BE /* Build configuration list for PBXNativeTarget "legoTests" */;
+			buildPhases = (
+				BA4FDF543034F61500D7F1BE /* Sources */,
+				BA4FDF553034F61500D7F1BE /* Frameworks */,
+				BA4FDF563034F61500D7F1BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA4FDF5A3034F61500D7F1BE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BA4FDF5B3034F61500D7F1BE /* legoTests */,
+			);
+			name = legoTests;
+			packageProductDependencies = (
+			);
+			productName = legoTests;
+			productReference = BA4FDF583034F61500D7F1BE /* legoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BA4FDF613034F61500D7F1BE /* legoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA4FDF723034F61500D7F1BE /* Build configuration list for PBXNativeTarget "legoUITests" */;
+			buildPhases = (
+				BA4FDF5E3034F61500D7F1BE /* Sources */,
+				BA4FDF5F3034F61500D7F1BE /* Frameworks */,
+				BA4FDF603034F61500D7F1BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA4FDF643034F61500D7F1BE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BA4FDF653034F61500D7F1BE /* legoUITests */,
+			);
+			name = legoUITests;
+			packageProductDependencies = (
+			);
+			productName = legoUITests;
+			productReference = BA4FDF623034F61500D7F1BE /* legoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA4FDF433034F61400D7F1BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					BA4FDF4A3034F61400D7F1BE = {
+						CreatedOnToolsVersion = 26.6;
+						LastSwiftMigration = 2660;
+					};
+					BA4FDF573034F61500D7F1BE = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = BA4FDF4A3034F61400D7F1BE;
+					};
+					BA4FDF613034F61500D7F1BE = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = BA4FDF4A3034F61400D7F1BE;
+					};
+				};
+			};
+			buildConfigurationList = BA4FDF463034F61400D7F1BE /* Build configuration list for PBXProject "lego" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA4FDF423034F61400D7F1BE;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BA4FDF4C3034F61400D7F1BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA4FDF4A3034F61400D7F1BE /* lego */,
+				BA4FDF573034F61500D7F1BE /* legoTests */,
+				BA4FDF613034F61500D7F1BE /* legoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA4FDF493034F61400D7F1BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA4FDF9D3034F69C00D7F1BE /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA4FDF563034F61500D7F1BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA4FDF603034F61500D7F1BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA4FDF473034F61400D7F1BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA4FDF943034F69C00D7F1BE /* BackendClient.swift in Sources */,
+				BA4FDFA13034F69C00D7F1BE /* HTTPBackend.swift in Sources */,
+				BA4FDFA33034F69C00D7F1BE /* Photos.swift in Sources */,
+				BA4FDF953034F69C00D7F1BE /* BrickSouqApp.swift in Sources */,
+				BA4FDF963034F69C00D7F1BE /* Moderation.swift in Sources */,
+				BA4FDF973034F69C00D7F1BE /* Models.swift in Sources */,
+				BA4FDF983034F69C00D7F1BE /* Catalog.swift in Sources */,
+				BA4FDF993034F69C00D7F1BE /* MainViews.swift in Sources */,
+				BA4FDF9A3034F69C00D7F1BE /* SellAndProfile.swift in Sources */,
+				BA4FDF9B3034F69C00D7F1BE /* AuthManager.swift in Sources */,
+				BA4FDF9C3034F69C00D7F1BE /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA4FDF543034F61500D7F1BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA4FDF5E3034F61500D7F1BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA4FDF5A3034F61500D7F1BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA4FDF4A3034F61400D7F1BE /* lego */;
+			targetProxy = BA4FDF593034F61500D7F1BE /* PBXContainerItemProxy */;
+		};
+		BA4FDF643034F61500D7F1BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA4FDF4A3034F61400D7F1BE /* lego */;
+			targetProxy = BA4FDF633034F61500D7F1BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BA4FDF6A3034F61500D7F1BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA4FDF6B3034F61500D7F1BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA4FDF6D3034F61500D7F1BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = lego/lego.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = doody.lego;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA4FDF6E3034F61500D7F1BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = lego/lego.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = doody.lego;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BA4FDF703034F61500D7F1BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = doody.legoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lego.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/lego";
+			};
+			name = Debug;
+		};
+		BA4FDF713034F61500D7F1BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = doody.legoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lego.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/lego";
+			};
+			name = Release;
+		};
+		BA4FDF733034F61500D7F1BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = doody.legoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = lego;
+			};
+			name = Debug;
+		};
+		BA4FDF743034F61500D7F1BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = doody.legoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = lego;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA4FDF463034F61400D7F1BE /* Build configuration list for PBXProject "lego" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA4FDF6A3034F61500D7F1BE /* Debug */,
+				BA4FDF6B3034F61500D7F1BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA4FDF6C3034F61500D7F1BE /* Build configuration list for PBXNativeTarget "lego" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA4FDF6D3034F61500D7F1BE /* Debug */,
+				BA4FDF6E3034F61500D7F1BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA4FDF6F3034F61500D7F1BE /* Build configuration list for PBXNativeTarget "legoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA4FDF703034F61500D7F1BE /* Debug */,
+				BA4FDF713034F61500D7F1BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA4FDF723034F61500D7F1BE /* Build configuration list for PBXNativeTarget "legoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA4FDF733034F61500D7F1BE /* Debug */,
+				BA4FDF743034F61500D7F1BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA4FDF433034F61400D7F1BE /* Project object */;
+}

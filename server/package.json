@@ -1,0 +1,17 @@
+{
+  "name": "bricksouq-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Listings backend for the Brick Souq iOS app. No dependencies.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node lib/seed.js",
+    "reset": "rm -f data/bricksouq.db && node lib/seed.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
